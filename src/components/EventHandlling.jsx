@@ -1,18 +1,16 @@
-import './EV.css'
+import "./EV.css";
 
 export const EventHandling = () => {
+  // function buttonHandler (){
+  //     alert("Hey I am A click Event");
+  // }
 
-// function buttonHandler (){
-//     alert("Hey I am A click Event");
-// }
-
-
-const buttonHandler = (event) => {
+  const buttonHandler = (event) => {
     console.log(event);
-    console.log(event.target.value); // This will be undefined for a <button>, use innerText instead if needed
+    console.log(event.target.value);
     console.log(event.target.type);
     alert("I am an alert");
-}
+  };
 
   return (
     <>
