@@ -2,6 +2,7 @@ import React from "react";
 // import NetflixSeries from "./components/NetflixSeries";
 // import './components/Netflix.module.css';
 import { EventHandling } from "./components/EventHandlling";
+import { EventPropagation } from "./components/EventPropagation";
 
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <section className="container">
       {/* <h1 className="card-heading">List Of Best Netflix Series</h1>
       <NetflixSeries /> */}
-      <EventHandling/>
+      {/* <EventHandling/> */}
+      <EventPropagation />
     </section>
   );
 }
