@@ -16,16 +16,16 @@ console.log("Parent Component Rendered");
       <h1>{count}</h1>
       <button onClick={handleButtonClick}>Increment Value</button>
     </section>
-    <ChildComponent/>
+    <ChildComponent count={count}/>
     </>
   );
 };
 
-function ChildComponent() {
+function ChildComponent({count}) {
     console.log("Child Component Rendered");
   return (
     <div className="main-div">
-      <h1>This is Child Component</h1>
+      <h1>This is Child Component - {count}</h1>
     </div>
   );
 }   
