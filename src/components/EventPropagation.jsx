@@ -16,9 +16,9 @@ export const EventPropagation = () => {
   return (
     <section>
       <div className="main-div">
-        <div className="g-div" onClick={handleGrandParent}>
-          <div className="p-div" onClick={handleParentClick}>
-            <div className="c-div" onClick={handleChildClick}>
+        <div className="g-div" onClickCapture ={handleGrandParent}>
+          <div className="p-div" onClickCapture={handleParentClick}>
+            <div className="c-div" onClickCapture={handleChildClick}>
               Child Div
             </div>
           </div>
