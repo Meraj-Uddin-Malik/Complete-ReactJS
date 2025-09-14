@@ -8,8 +8,6 @@ console.log("Parent Component Rendered");
     setCount(() => count + 1);
   };
 
-
-
   return (
     <>
     <section className="main-div">
