@@ -1,5 +1,5 @@
 
-import DrivedState from "./components/hooks/UseState/UseStatePractice";
+import DrivedState from "./components/hooks/useState/UseStatePractice";
 function App() {
   return (
     <section className="container">
