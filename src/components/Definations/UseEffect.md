@@ -8,7 +8,6 @@ The `useEffect` hook lets you perform side effects in function components. Commo
 import { useEffect } from "react";
 
 useEffect(() => {
-    // Your side effect code here
 
     return () => {
         // Cleanup code (optional)
