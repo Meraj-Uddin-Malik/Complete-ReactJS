@@ -12,6 +12,8 @@ export default function ToggleSwitch() {
   const toggleBgColor = { backgroundColor: isOn ? "#4caf50" : "#f44336" };
 
   return (
+    <>
+   <h1 style={{color: "#000", textAlign: "center"}}>Toggle Switch</h1>
     <div
       className="toggle-switch"
       style={toggleBgColor}
@@ -21,5 +23,6 @@ export default function ToggleSwitch() {
         <span className="swtich-state">{checkIsOn}</span>
       </div>
     </div>
+     </>
   );
 }
