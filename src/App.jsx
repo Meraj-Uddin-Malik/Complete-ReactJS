@@ -1,10 +1,9 @@
-import { LiftingState } from "./components/LiftStateUp";
+import ToggleSwitch from "./components/Projects/ToggleSwitch/ToggleSwitch";
 
 function App() {
   return (
     <section className="container">
-      
-      <LiftingState />
+      <ToggleSwitch />
     </section>
   );
 }
