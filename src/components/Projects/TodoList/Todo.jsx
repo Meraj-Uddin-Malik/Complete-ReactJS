@@ -1,4 +1,4 @@
-import { MdCheck } from "react-icons/md";
+import { MdCheck, MdDelete } from "react-icons/md";
 import "./Todo.css";
 import { useState } from "react";
 
@@ -48,15 +48,20 @@ export const Todo = () => {
       </section>
       <section className="order-list">
         <ul>
-          {task.map((curTask, index) => (
-            <li key={index}>
-              {item}
-              <span>{curTask}</span>
-              <button>
-                <MdCheck />
-              </button>
-            </li>
-          ))}
+          {task.map((curTask, index) => {
+            return (
+              <li key={index}>
+                {item}
+                <span>{curTask}</span>
+                <button>
+                  <MdCheck />
+                </button>
+                <button>
+                  <MdDelete />
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </section>
     </section>
