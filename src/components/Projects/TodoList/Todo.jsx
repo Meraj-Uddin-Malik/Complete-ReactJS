@@ -3,14 +3,20 @@ import { useState } from "react";
 
 export const Todo = () => {
   const [inputValue, setInputValue] = useState("");
+  const [task, setTask] = useState([]);
+
   const handleInputChange = (value) => {
     setInputValue(value);
   };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
     if (!inputValue) return;
-    setTask((prevTasks) => [...prevTasks]);
+    if (task.includes(inputValue)) return;
+
+    setTask((prevTasks) => [...prevTasks, inputValue]);
+    setInputValue("");
   };
 
   return (
@@ -19,14 +25,13 @@ export const Todo = () => {
         <h1>Todo List</h1>
       </header>
       <section className="form">
-        <form onSubmit={handleFormSubmit(event)}>
+        <form onSubmit={handleFormSubmit}>
           <div>
             <input
               type="text"
               className="todo-input"
               autoComplete="off"
               value={inputValue}
-              placeholder="Add a new task"
               onChange={(event) => handleInputChange(event.target.value)}
             />
           </div>
