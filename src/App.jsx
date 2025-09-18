@@ -1,9 +1,8 @@
-import ToggleSwitch from "./components/Projects/ToggleSwitch/ToggleSwitch";
-
+import { Todo } from "./components/Projects/TodoList/Todo";
 function App() {
   return (
     <section className="container">
-      <ToggleSwitch />
+      <Todo />
     </section>
   );
 }
