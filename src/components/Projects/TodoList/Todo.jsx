@@ -1,10 +1,16 @@
 import "./Todo.css";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const Todo = () => {
   const [inputValue, setInputValue] = useState("");
   const handleInputChange = (value) => {
     setInputValue(value);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    if (!inputValue) return;
+    setTask((prevTasks) => [...prevTasks]);
   };
 
   return (
@@ -13,7 +19,7 @@ export const Todo = () => {
         <h1>Todo List</h1>
       </header>
       <section className="form">
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={handleFormSubmit(event)}>
           <div>
             <input
               type="text"
