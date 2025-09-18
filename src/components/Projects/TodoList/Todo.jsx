@@ -1,3 +1,4 @@
+import { MdCheck } from "react-icons/md";
 import "./Todo.css";
 import { useState } from "react";
 
@@ -13,7 +14,10 @@ export const Todo = () => {
     event.preventDefault();
 
     if (!inputValue) return;
-    if (task.includes(inputValue)) return;
+    if (task.includes(inputValue)) {
+      setInputValue("");
+      return;
+    }
 
     setTask((prevTasks) => [...prevTasks, inputValue]);
     setInputValue("");
@@ -41,6 +45,19 @@ export const Todo = () => {
             </button>
           </div>
         </form>
+      </section>
+      <section className="order-list">
+        <ul>
+          {task.map((curTask, index) => (
+            <li key={index}>
+              {item}
+              <span>{curTask}</span>
+              <button>
+                <MdCheck />
+              </button>
+            </li>
+          ))}
+        </ul>
       </section>
     </section>
   );
