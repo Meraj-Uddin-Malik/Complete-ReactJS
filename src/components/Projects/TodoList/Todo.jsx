@@ -46,17 +46,16 @@ export const Todo = () => {
           </div>
         </form>
       </section>
-      <section className="order-list">
+      <section className="myUnOrdList">
         <ul>
           {task.map((curTask, index) => {
             return (
-              <li key={index}>
-                {item}
+              <li key={index} className="todo-item">
                 <span>{curTask}</span>
-                <button>
+                <button className="check-btn">
                   <MdCheck />
                 </button>
-                <button>
+                <button className="delete-btn">
                   <MdDelete />
                 </button>
               </li>
