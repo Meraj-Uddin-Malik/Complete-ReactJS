@@ -1,31 +1,29 @@
+import { useState, useEffect } from "react";
 import { MdCheck, MdDelete } from "react-icons/md";
 import "./Todo.css";
-import { useState } from "react";
 
 export const Todo = () => {
   const [inputValue, setInputValue] = useState("");
   const [tasks, setTasks] = useState([]);
-  const [showTime, setShowTime] = useState(true);
 
-  // Handle input change
+  const [dateTime, setDateTime] = useState("");
   const handleInputChange = (value) => {
     setInputValue(value);
   };
 
-  // Add task
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
     if (!inputValue.trim()) return;
 
-    // Prevent duplicates
+    // Prevent Duplicate Tasks
     if (tasks.some((task) => task.text === inputValue.trim())) {
       setInputValue("");
       return;
     }
 
     const newTask = {
-      id: Date.now(), // unique id
+      id: Date.now(),
       text: inputValue.trim(),
       completed: false,
     };
@@ -34,12 +32,12 @@ export const Todo = () => {
     setInputValue("");
   };
 
-  // Delete task
+  // Delete Task By ID
   const deleteTask = (id) => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
-  // Toggle task completion
+  // Toggle Task Completion Status
   const toggleComplete = (id) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
@@ -48,21 +46,22 @@ export const Todo = () => {
     );
   };
 
-  // Todo Date and Time
-  setInterval(() => {
-    const now = new Date();
-    const formattedDate = now.toLocaleDateString();
-    const formattedTime = now.toLocaleTimeString();
-    setShowTime(`${formattedDate} - ${formattedTime}`);
-  }, 1000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString();
+      const formattedTime = now.toLocaleTimeString();
+      setDateTime(`${formattedDate} - ${formattedTime}`);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="todo-container">
       <header>
         <h1>Todo List</h1>
-        <h2 className="date-time">
-          {showTime}
-        </h2>
+        <h2 className="date-time">{dateTime}</h2>
       </header>
 
       <section className="form">
