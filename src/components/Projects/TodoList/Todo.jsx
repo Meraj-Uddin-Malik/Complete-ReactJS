@@ -4,23 +4,47 @@ import { useState } from "react";
 
 export const Todo = () => {
   const [inputValue, setInputValue] = useState("");
-  const [task, setTask] = useState([]);
+  const [tasks, setTasks] = useState([]);
 
+  // Handle input change
   const handleInputChange = (value) => {
     setInputValue(value);
   };
 
+  // Add task
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    if (!inputValue) return;
-    if (task.includes(inputValue)) {
+    if (!inputValue.trim()) return;
+
+    // Prevent duplicates
+    if (tasks.some((task) => task.text === inputValue.trim())) {
       setInputValue("");
       return;
     }
 
-    setTask((prevTasks) => [...prevTasks, inputValue]);
+    const newTask = {
+      id: Date.now(), // unique id
+      text: inputValue.trim(),
+      completed: false,
+    };
+
+    setTasks((prevTasks) => [...prevTasks, newTask]);
     setInputValue("");
+  };
+
+  // Delete task
+  const deleteTask = (id) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+  };
+
+  // Toggle task completion
+  const toggleComplete = (id) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
   };
 
   return (
@@ -28,6 +52,7 @@ export const Todo = () => {
       <header>
         <h1>Todo List</h1>
       </header>
+
       <section className="form">
         <form onSubmit={handleFormSubmit}>
           <div>
@@ -46,21 +71,31 @@ export const Todo = () => {
           </div>
         </form>
       </section>
+
       <section className="myUnOrdList">
         <ul>
-          {task.map((curTask, index) => {
-            return (
-              <li key={index} className="todo-item">
-                <span>{curTask}</span>
-                <button className="check-btn">
-                  <MdCheck />
-                </button>
-                <button className="delete-btn">
-                  <MdDelete />
-                </button>
-              </li>
-            );
-          })}
+          {tasks.map((task) => (
+            <li
+              key={task.id}
+              className={`todo-item ${task.completed ? "completed" : ""}`}
+            >
+              <span>{task.text}</span>
+
+              <button
+                className="check-btn"
+                onClick={() => toggleComplete(task.id)}
+              >
+                <MdCheck />
+              </button>
+
+              <button
+                className="delete-btn"
+                onClick={() => deleteTask(task.id)}
+              >
+                <MdDelete />
+              </button>
+            </li>
+          ))}
         </ul>
       </section>
     </section>
