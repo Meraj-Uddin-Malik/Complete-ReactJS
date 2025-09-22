@@ -61,8 +61,7 @@ export const Todo = () => {
       <header>
         <h1>Todo List</h1>
         <h2 className="date-time">
-          {" "}
-          {formattedDate} - {formattedTime}{" "}
+          {showTime}
         </h2>
       </header>
 
