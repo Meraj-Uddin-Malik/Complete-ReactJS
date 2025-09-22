@@ -5,6 +5,7 @@ import { useState } from "react";
 export const Todo = () => {
   const [inputValue, setInputValue] = useState("");
   const [tasks, setTasks] = useState([]);
+  const [showTime, setShowTime] = useState(true);
 
   // Handle input change
   const handleInputChange = (value) => {
@@ -48,16 +49,21 @@ export const Todo = () => {
   };
 
   // Todo Date and Time
-  const now = new Date();
-  const formattedDate = now.toLocaleDateString();
-  const formattedTime = now.toLocaleTimeString(); // Uncomment if time display is needed
-
+  setInterval(() => {
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString();
+    const formattedTime = now.toLocaleTimeString();
+    setShowTime(true);
+  }, 1000);
 
   return (
     <section className="todo-container">
       <header>
         <h1>Todo List</h1>
-        <h2 className="date-time"> {formattedDate} - {formattedTime} </h2>
+        <h2 className="date-time">
+          {" "}
+          {formattedDate} - {formattedTime}{" "}
+        </h2>
       </header>
 
       <section className="form">
