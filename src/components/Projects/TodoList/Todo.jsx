@@ -47,6 +47,21 @@ export const Todo = () => {
     );
   };
 
+  // Todo Date and Time
+  const now = new Date();
+const formattedDate = now.toLocaleDateString(undefined, {
+  weekday: 'long',
+  year: 'numeric',  
+  month: 'long',
+  day: 'numeric'
+});
+const formattedTime = now.toLocaleTimeString(undefined, {
+  hour: '2-digit',
+  minute: '2-digit'
+});
+const dateTimeString = `${formattedDate} - ${formattedTime}`;
+
+
   return (
     <section className="todo-container">
       <header>
