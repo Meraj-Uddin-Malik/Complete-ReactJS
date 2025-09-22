@@ -53,7 +53,7 @@ export const Todo = () => {
     const now = new Date();
     const formattedDate = now.toLocaleDateString();
     const formattedTime = now.toLocaleTimeString();
-    setShowTime(true);
+    setShowTime(`${formattedDate} - ${formattedTime}`);
   }, 1000);
 
   return (
