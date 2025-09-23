@@ -48,8 +48,10 @@ export const Todo = () => {
 
   // Clear All 
 
-  const handleDeleteTodo = () => {
+  const handleDeleteTodo = (value) => {
     setTasks([]);
+    console.log(tasks);
+    console.log(value);
   }
 
   useEffect(() => {
