@@ -111,7 +111,7 @@ export const Todo = () => {
               >
                 <MdDelete />
               </button>
-              <button className="clear-btn" onClick={() => {handleDeleteTodo}}>
+              <button className="clear-btn" onClick={() => {handleDeleteTodo(task)}}>
               <MdDeleteForever/>
               </button>
             </li>
