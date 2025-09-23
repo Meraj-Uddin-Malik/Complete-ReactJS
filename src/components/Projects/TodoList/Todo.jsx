@@ -49,9 +49,11 @@ export const Todo = () => {
   // Clear All 
 
   const handleDeleteTodo = (value) => {
-    setTasks([]);
+    // setTasks([]);
     console.log(tasks);
     console.log(value);
+    const updatedTask = tasks.filter((tasks)=> tasks === value);
+    setTasks(updatedTask);
   }
 
   useEffect(() => {
