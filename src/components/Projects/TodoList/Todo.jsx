@@ -49,6 +49,10 @@ export const Todo = () => {
     );
   };
 
+  const handleClearButton = () => {
+    setTasks([]);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
@@ -111,7 +115,14 @@ export const Todo = () => {
       </section>
 
       <section>
-        <button className="clear-btn" onClick={()=> {handleClearButton}}>Clear All</button>
+        <button
+          className="clear-btn"
+          onClick={() => {
+            handleClearButton;
+          }}
+        >
+          Clear All
+        </button>
       </section>
     </section>
   );
