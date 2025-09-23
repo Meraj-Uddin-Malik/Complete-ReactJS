@@ -48,8 +48,8 @@ export const Todo = () => {
 
   // Clear All 
 
-  const clearAll = () => {
-    setInputValue(0);
+  const handleDeleteTodo = () => {
+    setTasks([]);
   }
 
   useEffect(() => {
@@ -111,7 +111,7 @@ export const Todo = () => {
               >
                 <MdDelete />
               </button>
-              <button className="clear-btn" onClick={() => {clearAll}}>
+              <button className="clear-btn" onClick={() => {handleDeleteTodo}}>
               <MdDeleteForever/>
               </button>
             </li>
