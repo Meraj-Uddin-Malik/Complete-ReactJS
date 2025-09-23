@@ -33,8 +33,11 @@ export const Todo = () => {
   };
 
   // Delete Task By ID
-  const deleteTask = (id) => {
-    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+  const deleteTask = (value) => {
+    console.log(tasks);
+    console.log(value);
+    const updatedTask = tasks.filter((tasks)=> tasks !== value);
+    setTasks(updatedTask);
   };
 
   // Toggle Task Completion Status
@@ -46,15 +49,6 @@ export const Todo = () => {
     );
   };
 
-  // Clear All 
-
-  const handleDeleteTodo = (value) => {
-    // setTasks([]);
-    console.log(tasks);
-    console.log(value);
-    const updatedTask = tasks.filter((tasks)=> tasks === value);
-    setTasks(updatedTask);
-  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -111,12 +105,9 @@ export const Todo = () => {
 
               <button
                 className="delete-btn"
-                onClick={() => deleteTask(task.id)}
+                onClick={() => deleteTask(task)}
               >
-                <MdDelete />
-              </button>
-              <button className="clear-btn" onClick={() => {handleDeleteTodo(task)}}>
-              <MdDeleteForever/>
+                <MdDeleteForever/>
               </button>
             </li>
           ))}
