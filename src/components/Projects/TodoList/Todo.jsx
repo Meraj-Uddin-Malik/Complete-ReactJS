@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MdCheck, MdDelete } from "react-icons/md";
+import { MdCheck, MdClearAll, MdDelete, MdDeleteForever } from "react-icons/md";
 import "./Todo.css";
 
 export const Todo = () => {
@@ -45,6 +45,12 @@ export const Todo = () => {
       )
     );
   };
+
+  // Clear All 
+
+  const clearAll = () => {
+    setInputValue(0);
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -104,6 +110,9 @@ export const Todo = () => {
                 onClick={() => deleteTask(task.id)}
               >
                 <MdDelete />
+              </button>
+              <button className="clear-btn" onClick={() => {clearAll}}>
+              <MdDeleteForever/>
               </button>
             </li>
           ))}

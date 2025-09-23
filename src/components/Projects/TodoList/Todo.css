@@ -190,6 +190,7 @@ li span {
   -moz-border-radius: 0.3rem;
   -ms-border-radius: 0.3rem;
   -o-border-radius: 0.3rem;
+  color: #fff;
 }
 
 .clear-btn:hover {
