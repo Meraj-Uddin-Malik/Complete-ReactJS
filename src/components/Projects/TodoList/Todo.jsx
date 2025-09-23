@@ -115,12 +115,7 @@ export const Todo = () => {
       </section>
 
       <section>
-        <button
-          className="clear-btn"
-          onClick={() => {
-            handleClearButton;
-          }}
-        >
+        <button className="clear-btn" onClick={handleClearButton}>
           Clear All
         </button>
       </section>
