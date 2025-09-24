@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { MdCheck, MdClearAll, MdDelete, MdDeleteForever } from "react-icons/md";
 import "./Todo.css";
+import { TodoForm } from "./TodoForm";
 
 export const Todo = () => {
   const [inputValue, setInputValue] = useState("");
@@ -71,24 +72,7 @@ export const Todo = () => {
         <h2 className="date-time">{dateTime}</h2>
       </header>
 
-      <section className="form">
-        <form onSubmit={handleFormSubmit}>
-          <div>
-            <input
-              type="text"
-              className="todo-input"
-              autoComplete="off"
-              value={inputValue}
-              onChange={(event) => handleInputChange(event.target.value)}
-            />
-          </div>
-          <div>
-            <button type="submit" className="todobtn">
-              Add Task
-            </button>
-          </div>
-        </form>
-      </section>
+     <TodoForm/>
 
       <section className="myUnOrdList">
         <ul>
