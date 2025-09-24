@@ -4,8 +4,10 @@ export const TodoForm = (onAddTodo) => {
     setInputValue(value);
   };
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
     onAddTodo(inputValue);
+    setInputValue("");
   };
 
   return (

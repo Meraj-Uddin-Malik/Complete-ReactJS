@@ -25,7 +25,6 @@ export const Todo = () => {
     };
 
     setTasks((prevTasks) => [...prevTasks, newTask]);
-    setInputValue("");
   };
 
   // Delete Task By ID
