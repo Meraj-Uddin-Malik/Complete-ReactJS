@@ -1,7 +1,11 @@
-export const TodoForm = () => {
+export const TodoForm = (onAddTodo) => {
   const [inputValue, setInputValue] = useState("");
   const handleInputChange = (value) => {
     setInputValue(value);
+  };
+
+  const handleFormSubmit = () => {
+    
   };
 
   return (
