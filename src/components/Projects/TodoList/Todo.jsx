@@ -8,8 +8,7 @@ export const Todo = () => {
 
   const [dateTime, setDateTime] = useState("");
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
+  const handleFormSubmit = () => {
 
     if (!inputValue.trim()) return;
 

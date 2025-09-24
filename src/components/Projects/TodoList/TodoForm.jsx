@@ -5,7 +5,7 @@ export const TodoForm = (onAddTodo) => {
   };
 
   const handleFormSubmit = () => {
-    
+    onAddTodo(inputValue);
   };
 
   return (
