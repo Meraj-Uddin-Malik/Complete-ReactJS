@@ -4,17 +4,6 @@ The `useEffect` hook lets you perform side effects in function components. Commo
 
 ## Basic Syntax
 
-```jsx
-import { useEffect } from "react";
-
-useEffect(() => {
-
-    return () => {
-        // Cleanup code (optional)
-    };
-}, [/* dependencies */]);
-```
-
 ## How It Works
 
 - The effect runs after every render by default.
