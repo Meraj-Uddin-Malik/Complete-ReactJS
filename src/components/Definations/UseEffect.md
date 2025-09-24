@@ -1,51 +1,54 @@
-# `useEffect` in React
+## useEffect Hook in React
 
-The `useEffect` hook lets you perform side effects in function components. Common uses include data fetching, subscriptions, and manually changing the DOM.
+The `useEffect` hook lets you perform side effects in function components. Common uses include data fetching, subscriptions, or manually changing the DOM.
 
-## Basic Syntax
+### Basic Syntax
 
-## How It Works
+```js
+import { useEffect } from "react";
 
-- The effect runs after every render by default.
-- The dependency array (`[]`) controls when the effect runs:
-    - `[]`: Runs only once after the initial render.
-    - `[value]`: Runs when `value` changes.
-    - No array: Runs after every render.
+useEffect(() => {
+    // Your code here (side effect)
+}, [/* dependencies */]);
+```
 
-## Example
+- The first argument is a function containing the side effect.
+- The second argument is an array of dependencies. The effect runs when any dependency changes. If empty, it runs once after the initial render.
 
-```jsx
+### Example: Fetching Data
+
+```js
 import { useEffect, useState } from "react";
 
 function Example() {
-    const [count, setCount] = useState(0);
+    const [data, setData] = useState(null);
 
     useEffect(() => {
-        document.title = `Count: ${count}`;
-    }, [count]);
+        fetch("https://api.example.com/data")
+            .then(response => response.json())
+            .then(setData);
+    }, []); // Runs once
 
-    return (
-        <button onClick={() => setCount(count + 1)}>
-            Increment
-        </button>
-    );
+    return <div>{data ? JSON.stringify(data) : "Loading..."}</div>;
 }
 ```
 
-## Cleanup
+### Cleanup
 
-Use the return function for cleanup (e.g., unsubscribing):
+Return a function from `useEffect` to clean up resources (like subscriptions or timers):
 
-```jsx
+```js
 useEffect(() => {
-    const id = setInterval(() => {
+    const timer = setInterval(() => {
         // Do something
     }, 1000);
 
-    return () => clearInterval(id);
+    return () => clearInterval(timer); // Cleanup
 }, []);
 ```
 
-## References
+### Summary
 
-- [React Docs: useEffect](https://react.dev/reference/react/useEffect)
+- `useEffect` runs after render.
+- Use dependencies to control when it runs.
+- Return a cleanup function if needed.
