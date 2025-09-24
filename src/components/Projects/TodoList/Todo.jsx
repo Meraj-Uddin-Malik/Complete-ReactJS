@@ -4,13 +4,9 @@ import "./Todo.css";
 import { TodoForm } from "./TodoForm";
 
 export const Todo = () => {
-  const [inputValue, setInputValue] = useState("");
   const [tasks, setTasks] = useState([]);
 
   const [dateTime, setDateTime] = useState("");
-  const handleInputChange = (value) => {
-    setInputValue(value);
-  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();

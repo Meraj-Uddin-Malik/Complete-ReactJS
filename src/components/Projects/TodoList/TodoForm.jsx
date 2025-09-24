@@ -1,4 +1,9 @@
 export const TodoForm = () => {
+  const [inputValue, setInputValue] = useState("");
+  const handleInputChange = (value) => {
+    setInputValue(value);
+  };
+
   return (
     <section className="form">
       <form onSubmit={handleFormSubmit}>
