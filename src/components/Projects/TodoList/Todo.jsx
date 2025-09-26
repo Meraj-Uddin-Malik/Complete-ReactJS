@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { MdCheck, MdDeleteForever } from "react-icons/md";
 import "./Todo.css";
 import { TodoForm } from "./TodoForm";
+import { TodoList } from "./TodoList";
 
 export const Todo = () => {
   const [tasks, setTasks] = useState([]);
@@ -64,28 +65,12 @@ export const Todo = () => {
         <h2 className="date-time">{dateTime}</h2>
       </header>
 
-     <TodoForm onAddTodo={handleFormSubmit}/>
+      <TodoForm onAddTodo={handleFormSubmit} />
 
       <section className="myUnOrdList">
         <ul>
           {tasks.map((task) => (
-            <li
-              key={task.id}
-              className={`todo-item ${task.completed ? "completed" : ""}`}
-            >
-              <span>{task.text}</span>
-
-              <button
-                className="check-btn"
-                onClick={() => toggleComplete(task.id)}
-              >
-                <MdCheck />
-              </button>
-
-              <button className="delete-btn" onClick={() => deleteTask(task)}>
-                <MdDeleteForever />
-              </button>
-            </li>
+            <TodoList  key={index} data={task} onHandleDeleteTodo = {deleteTask}/>
           ))}
         </ul>
       </section>
