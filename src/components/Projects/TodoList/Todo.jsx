@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
-import { MdCheck, MdDeleteForever } from "react-icons/md";
+import { useState } from "react";
 import "./Todo.css";
 import { TodoForm } from "./TodoForm";
 import { TodoList } from "./TodoList";
+import { TodoDate } from "./TodoDate";
 
 export const Todo = () => {
   const [tasks, setTasks] = useState([]);
-  const [dateTime, setDateTime] = useState("");
 
   const handleFormSubmit = () => {
     if (!inputValue.trim()) return;
@@ -47,22 +46,11 @@ export const Todo = () => {
     setTasks([]);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const now = new Date();
-      const formattedDate = now.toLocaleDateString();
-      const formattedTime = now.toLocaleTimeString();
-      setDateTime(`${formattedDate} - ${formattedTime}`);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="todo-container">
       <header>
         <h1>Todo List</h1>
-        <h2 className="date-time">{dateTime}</h2>
+        <TodoDate />
       </header>
 
       <TodoForm onAddTodo={handleFormSubmit} />
@@ -70,7 +58,7 @@ export const Todo = () => {
       <section className="myUnOrdList">
         <ul>
           {tasks.map((task) => (
-            <TodoList  key={index} data={task} onHandleDeleteTodo = {deleteTask}/>
+            <TodoList key={index} data={task} onHandleDeleteTodo={deleteTask} />
           ))}
         </ul>
       </section>

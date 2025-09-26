@@ -1,3 +1,5 @@
+import { MdCheck, MdDeleteForever } from "react-icons/md"
+
 export const TodoList = ({key, data, onHandleDeleteTodo}) => {
     return (
         <li
@@ -8,13 +10,13 @@ export const TodoList = ({key, data, onHandleDeleteTodo}) => {
 
             <button
                 className="check-btn"
-                onClick={() => toggleComplete(task.id)}
+                onClick={() => toggleComplete(data)}
             >
                 <MdCheck />
             </button>
 
-            <button className="delete-btn" onClick={() => onHandleDeleteTodo(task)}>
-                <MdDeleteForever />
+            <button className="delete-btn" onClick={() => onHandleDeleteTodo(data)}>
+                <MdDeleteForever/>
             </button>
         </li>
     )
