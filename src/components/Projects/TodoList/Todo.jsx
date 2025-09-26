@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
-import { MdCheck, MdClearAll, MdDelete, MdDeleteForever } from "react-icons/md";
+import { MdCheck, MdDeleteForever } from "react-icons/md";
 import "./Todo.css";
 import { TodoForm } from "./TodoForm";
 
 export const Todo = () => {
   const [tasks, setTasks] = useState([]);
-
   const [dateTime, setDateTime] = useState("");
 
   const handleFormSubmit = () => {
-
     if (!inputValue.trim()) return;
 
     // Prevent Duplicate Tasks
