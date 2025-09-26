@@ -1,15 +1,16 @@
 import { useState } from "react";
 
 export const TodoForm = ({ onAddTodo }) => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState({});
+
+  const handleInputChange = (value) => {
+    setInputValue({ id: value, content: value, checked: false });
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-
-    if (!inputValue.trim()) return; // prevent empty tasks
-
-    onAddTodo(inputValue.trim());
-    setInputValue("");
+    onAddTodo(inputValue);
+    setInputValue({ id: "", content: "", checked: false });
   };
 
   return (
@@ -19,14 +20,13 @@ export const TodoForm = ({ onAddTodo }) => {
           <input
             type="text"
             className="todo-input"
-            placeholder="Enter a task..."
             autoComplete="off"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
+            value={inputValue.content}
+            onChange={(event) => handleInputChange(event.target.value)}
           />
         </div>
         <div>
-          <button type="submit" className="todobtn">
+          <button type="submit" className="todo-btn">
             Add Task
           </button>
         </div>

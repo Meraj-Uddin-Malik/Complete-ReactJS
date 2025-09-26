@@ -8,15 +8,11 @@ export const TodoDate = () => {
       const now = new Date();
       const formattedDate = now.toLocaleDateString();
       const formattedTime = now.toLocaleTimeString();
+
       setDateTime(`${formattedDate} - ${formattedTime}`);
     }, 1000);
 
     return () => clearInterval(interval);
   }, []);
-
-  return (
-    <div className="todo-date">
-      <p>{dateTime}</p>
-    </div>
-  );
+  return <h2 className="date-time">{dateTime}</h2>;
 };
