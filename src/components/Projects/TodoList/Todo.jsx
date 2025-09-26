@@ -7,12 +7,12 @@ import { TodoDate } from "./TodoDate";
 export const Todo = () => {
   const [tasks, setTasks] = useState([]);
 
-  const handleFormSubmit = () => {
+  // Handle Form Submission
+  const handleFormSubmit = (inputValue) => {
     if (!inputValue.trim()) return;
 
     // Prevent Duplicate Tasks
     if (tasks.some((task) => task.text === inputValue.trim())) {
-      setInputValue("");
       return;
     }
 
@@ -26,11 +26,8 @@ export const Todo = () => {
   };
 
   // Delete Task By ID
-  const deleteTask = (value) => {
-    console.log(tasks);
-    console.log(value);
-    const updatedTask = tasks.filter((tasks) => tasks !== value);
-    setTasks(updatedTask);
+  const deleteTask = (id) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
   // Toggle Task Completion Status
@@ -42,6 +39,7 @@ export const Todo = () => {
     );
   };
 
+  // Clear All Tasks
   const handleClearButton = () => {
     setTasks([]);
   };
@@ -58,7 +56,12 @@ export const Todo = () => {
       <section className="myUnOrdList">
         <ul>
           {tasks.map((task) => (
-            <TodoList key={index} data={task} onHandleDeleteTodo={deleteTask} />
+            <TodoList
+              key={task.id}
+              data={task}
+              onHandleDeleteTodo={deleteTask}
+              onToggleComplete={toggleComplete}
+            />
           ))}
         </ul>
       </section>
