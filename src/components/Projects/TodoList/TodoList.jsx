@@ -7,7 +7,7 @@ export const TodoList = ({ data, onHandleDeleteTodo, onToggleComplete }) => {
 
       <button
         className="check-btn"
-        onClick={() => onToggleComplete(data.id)} // now works!
+        onClick={() => onToggleComplete(data.id)}
       >
         <MdCheck />
       </button>
