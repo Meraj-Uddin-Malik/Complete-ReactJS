@@ -64,7 +64,7 @@ export const Todo = () => {
         <h2 className="date-time">{dateTime}</h2>
       </header>
 
-     <TodoForm/>
+     <TodoForm onAddTodo={handleFormSubmit}/>
 
       <section className="myUnOrdList">
         <ul>
