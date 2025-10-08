@@ -69,6 +69,7 @@ form input {
   width: 100%;
   background-color: #f2f3f4;
   color: var(--primary-color);
+   color: grey ;
 }
 
 form input:hover {
@@ -76,7 +77,7 @@ form input:hover {
 }
 
 form input::placeholder {
-  color: white;
+  color: grey;
   opacity: 0.7;
 }
 
