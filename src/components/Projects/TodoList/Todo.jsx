@@ -10,6 +10,9 @@ export const Todo = () => {
           <div>
             <input className="todo-input" type="text" placeholder="Add Todo..." autoCapitalize="off"/>
           </div>
+          <div>
+            <button className="todo-btn" type="submit">Add</button>
+          </div>
         </form>
       </section>
     </section>
