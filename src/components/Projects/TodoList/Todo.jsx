@@ -1,5 +1,7 @@
+import "./Todo.css";
+
 export const Todo = () => {
   return (
-    <section></section>
+    <section className="todo-container"></section>
   )
 }
