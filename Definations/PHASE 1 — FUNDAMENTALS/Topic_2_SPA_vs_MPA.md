@@ -17,3 +17,20 @@
 - Instagram
 - WhatsApp Web
   React creates SPA
+
+# Why do we need this?
+
+# Problem with MPA
+
+- In MPA:
+- Page reloads again and again
+- Slow user experience
+- Data reloads every time
+  Analogy (very important):
+
+# Why SPA is better
+- In SPA:
+- Page loads once
+- Only content changes
+- Much faster
+- Smooth experience
