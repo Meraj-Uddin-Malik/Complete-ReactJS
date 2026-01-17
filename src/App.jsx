@@ -1,8 +1,9 @@
-import { Todo } from "./components/Projects/TodoList/Todo";
+
+import ReactApp from "./components/reactJSX";
 function App() {
   return (
     <section className="container">
-      <Todo />
+    <ReactApp />
     </section>
   );
 }
