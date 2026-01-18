@@ -1,9 +1,9 @@
 
-import ReactApp from "./components/reactJSX";
+import NetflixComponent from "./components/NetflixComponent";
 function App() {
   return (
     <section className="container">
-    <ReactApp />
+      <NetflixComponent />
     </section>
   );
 }
