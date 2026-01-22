@@ -4,10 +4,15 @@ const NetflixSeries = () => {
   const genre = "Romcom";
   const summary = "A gripping tale of love and loss and redemption and hope.";
   let age = 23;
-  let canWatch = "Not Allowed";
-  if (age >= 18) {
-    canWatch = "Allowed";
-  }
+  // let canWatch = "Not Allowed";
+  // if (age >= 18) {
+  //   canWatch = "Allowed";
+  // }
+
+  const canWatch = () => {
+    if (age >= 18) "Allowed";
+    return "Not Allowed";
+  };
 
   return (
     <div>
@@ -24,7 +29,8 @@ const NetflixSeries = () => {
       <h4>Genre: {genre}</h4>
       <p>Summary: {summary}</p>
       {/* <button>{age >= 12 ? "Allowed" : "Not Allowed"}</button> */}
-      <button>{canWatch}</button>
+      {/* <button>{canWatch}</button> */}
+      <button>{canWatch()}</button>
     </div>
   );
 };
