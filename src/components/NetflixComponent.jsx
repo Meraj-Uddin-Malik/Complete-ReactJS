@@ -4,6 +4,10 @@ const NetflixSeries = () => {
   const genre = "Romcom";
   const summary = "A gripping tale of love and loss and redemption and hope.";
   let age = 17;
+  let canWatch = "Not Allowed";
+  if (age >= 18) {
+    canWatch = "Allowed";
+  }
 
   return (
     <div>
