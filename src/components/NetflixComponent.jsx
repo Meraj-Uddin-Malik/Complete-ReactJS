@@ -3,7 +3,7 @@ const NetflixSeries = () => {
   const rating = 8.2;
   const genre = "Romcom";
   const summary = "A gripping tale of love and loss and redemption and hope.";
-  let age = 17;
+  let age = 23;
   let canWatch = "Not Allowed";
   if (age >= 18) {
     canWatch = "Allowed";
@@ -23,7 +23,8 @@ const NetflixSeries = () => {
       <h3>Rating: {rating}</h3>
       <h4>Genre: {genre}</h4>
       <p>Summary: {summary}</p>
-      <button>{age >= 12 ? "Allowed" : "Not Allowed"}</button>
+      {/* <button>{age >= 12 ? "Allowed" : "Not Allowed"}</button> */}
+      <button>{canWatch}</button>
     </div>
   );
 };
