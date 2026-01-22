@@ -4,7 +4,7 @@ const NetflixSeries = () => {
   const genre = "Romcom";
   const summary = "A gripping tale of love and loss and redemption and hope.";
 
-  const age = 20; // Example age, can be modified to test the condition
+  const age = 12; // Example age, can be modified to test the condition
   if (age > 18) {
     return (
       <div>
@@ -20,12 +20,25 @@ const NetflixSeries = () => {
         <h3>Rating: {rating}</h3>
         <h4>Genre: {genre}</h4>
         <p>Summary: {summary}</p>
+        <button>Allowed</button>
       </div>
     );
   } else {
     return (
       <div>
-        <h2>Sorry, this content is not available for viewers under 18.</h2>
+        <div>
+          <img
+            src="./images/qot.jpg"
+            alt="Queens Of Tears"
+            height={300}
+            width={500}
+          />
+        </div>
+        <h2>{seriesName}</h2>
+        <h3>Rating: {rating}</h3>
+        <h4>Genre: {genre}</h4>
+        <p>Summary: {summary}</p>
+        <button>Not Allowed</button>
       </div>
     );
   }
