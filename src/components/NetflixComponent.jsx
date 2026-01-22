@@ -1,6 +1,7 @@
 const NetflixSeries = () => {
   const seriesName = "Queens Of Tears";
   const rating = 8.2;
+  const genre = "Romcom";
   const summary =
     "A gripping tale of love and loss and redemption and hope.";
 
@@ -17,6 +18,7 @@ const NetflixSeries = () => {
       </div>
       <h2>{seriesName}</h2>
       <h3>Rating: {rating}</h3>
+      <h4>Genre: {genre}</h4>
       <p>Summary: {summary}</p>
     </div>
   );
