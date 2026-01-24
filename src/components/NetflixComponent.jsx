@@ -1,36 +1,27 @@
-const NetflixSeries = () => {
-  const seriesName = "Queens Of Tears";
-  const rating = 8.2;
-  const genre = "Romcom";
-  const summary = "A gripping tale of love and loss and redemption and hope.";
-  let age = 23;
-  // let canWatch = "Not Allowed";
-  // if (age >= 18) {
-  //   canWatch = "Allowed";
-  // }
+import seriesData from "../api/seriesData.json";
 
-  const canWatch = () => {
-    if (age >= 18) "Allowed";
-    return "Not Allowed";
-  };
+const NetflixSeries = () => {
+  // const canWatch = () => {
+  //   if (age >= 18) "Allowed";
+  //   return "Not Allowed";
+  // };
 
   return (
     <div>
       <div>
-        <img
-          src="./images/qot.jpg"
-          alt="Queens Of Tears"
-          height={300}
-          width={500}
-        />
+        <img src={seriesData[0].img_url} alt="qot" height="40%" width="40%"/>
       </div>
-      <h2>{seriesName}</h2>
-      <h3>Rating: {rating}</h3>
-      <h4>Genre: {genre}</h4>
-      <p>Summary: {summary}</p>
+      <h2>{seriesData[0].name}</h2>
+      <h3>Rating: {seriesData[0].rating}</h3>
+      <h4>Genre: {seriesData[0].genre}</h4>
+      <p>Summary: {seriesData[0].description}</p>
+      <p>Cast: {seriesData[0].cast}</p>
+      <a href={seriesData[0].watch_url} target="_blank">
+          <button>Watch Now</button>
+      </a>
       {/* <button>{age >= 12 ? "Allowed" : "Not Allowed"}</button> */}
       {/* <button>{canWatch}</button> */}
-      <button>{canWatch()}</button>
+    
     </div>
   );
 };
