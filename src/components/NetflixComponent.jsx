@@ -3,28 +3,30 @@
 import seriesData from "../api/seriesData.json";
 
 const NetflixSeries = () => {
-  // const canWatch = () => {
-  //   if (age >= 18) "Allowed";
-  //   return "Not Allowed";
-  // };
-
   return (
     <ul>
-      <li>
-        <div>
-          <img src={seriesData[0].img_url} alt="qot" height="40%" width="40%" />
-        </div>
-        <h2>{seriesData[0].name}</h2>
-        <h3>Rating: {seriesData[0].rating}</h3>
-        <h4>Genre: {seriesData[0].genre}</h4>
-        <p>Summary: {seriesData[0].description}</p>
-        <p>Cast: {seriesData[0].cast}</p>
-        <a href={seriesData[0].watch_url} target="_blank">
-          <button>Watch Now</button>
-        </a>
-        {/* <button>{age >= 12 ? "Allowed" : "Not Allowed"}</button> */}
-        {/* <button>{canWatch}</button> */}
-      </li>
+      {seriesData.map((currentSeries) => {
+        return (
+          <li>
+            <div>
+              <img
+                src={currentSeries.img_url}
+                alt="qot"
+                height="40%"
+                width="40%"
+              />
+            </div>
+            <h2>{currentSeries.name}</h2>
+            <h3>Rating: {currentSeries.rating}</h3>
+            <h4>Genre: {currentSeries.genre}</h4>
+            <p>Summary: {currentSeries.description}</p>
+            <p>Cast: {currentSeries.cast}</p>
+            <a href={currentSeries.watch_url} target="_blank">
+              <button>Watch Now</button>
+            </a>
+          </li>
+        );
+      })}
     </ul>
   );
 };
