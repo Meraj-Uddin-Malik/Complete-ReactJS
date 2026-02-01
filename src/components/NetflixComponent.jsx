@@ -1,5 +1,3 @@
-
-
 import { SeriesCard } from "./SeriesCard";
 
 const NetflixSeries = () => {
