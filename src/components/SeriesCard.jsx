@@ -1,4 +1,3 @@
-
 export const SeriesCard = (props) => {
   return (
     <li key={props.currentSeries.id}>
