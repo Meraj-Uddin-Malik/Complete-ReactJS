@@ -31,3 +31,6 @@ const NetflixSeries = () => {
   );
 };
 export default NetflixSeries;
+
+
+
