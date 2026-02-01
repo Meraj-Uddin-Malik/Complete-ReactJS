@@ -3,11 +3,9 @@ import seriesData from "../api/seriesData.json";
 
 const NetflixSeries = () => {
   return (
-    <ul>
+    <ul className="grid">
       {seriesData.map((currentSeries) => {
-        return (
-          <SeriesCard key={currentSeries.id} data={currentSeries} />
-        );
+        return <SeriesCard key={currentSeries.id} data={currentSeries} />;
       })}
     </ul>
   );
