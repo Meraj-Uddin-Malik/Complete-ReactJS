@@ -1,9 +1,9 @@
 export const SeriesCard = (props) => {
   console.log(props);
   const { id, name, img_url, rating, genre, description, cast, watch_url } =
-    props.currentSeries;
+    props.data;
   return (
-    <li key={id}>
+    <li>
       <div>
         <img src={img_url} alt="qot" height="40%" width="40%" />
       </div>
