@@ -2,6 +2,15 @@ export const SeriesCard = (props) => {
   console.log(props);
   const { id, name, img_url, rating, genre, description, cast, watch_url } =
     props.data;
+
+  const btn_style = {
+    padding: "1.2rem 2.4rem",
+    border: "none",
+    fontSize: "1.6rem",
+    backgroundColor: "var(--btn-hover-bg-color)",
+    color: "var(--bg-color)",
+  };
+
   return (
     <li className="card">
       <div>
@@ -15,7 +24,7 @@ export const SeriesCard = (props) => {
         <p>Summary: {description}</p>
         <p>Cast: {cast}</p>
         <a href={watch_url} target="_blank">
-          <button style={{padding:"1.2rem 2.4rem"}}>Watch Now</button>
+          <button style={btn_style}>Watch Now</button>
         </a>
       </div>
     </li>
