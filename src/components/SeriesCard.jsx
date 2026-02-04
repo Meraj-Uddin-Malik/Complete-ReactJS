@@ -15,7 +15,7 @@ export const SeriesCard = (props) => {
         <p>Summary: {description}</p>
         <p>Cast: {cast}</p>
         <a href={watch_url} target="_blank">
-          <button>Watch Now</button>
+          <button style={{padding:"1.2rem 2.4rem"}}>Watch Now</button>
         </a>
       </div>
     </li>
