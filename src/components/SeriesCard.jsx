@@ -51,7 +51,7 @@ export const SeriesCard = (props) => {
         <p>Cast: {cast}</p>
         <a href={watch_url} target="_blank">
           {/* <button style={btn_style}>Watch Now</button> */}
-
+{/* commit */}
           <MineButton rating={rating}>Watch Now</MineButton>
         </a>
       </div>
