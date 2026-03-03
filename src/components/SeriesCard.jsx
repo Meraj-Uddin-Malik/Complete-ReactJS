@@ -47,7 +47,7 @@ export const SeriesCard = (props) => {
           </span>
         </h4>
         <h4>Genre: {genre}</h4>
-        <p className="text-3xl font-bold underline">Summary: {description}</p>
+        <p>Summary: {description}</p>
         <p>Cast: {cast}</p>
         <a href={watch_url} target="_blank">
           {/* <button style={btn_style}>Watch Now</button> */}
