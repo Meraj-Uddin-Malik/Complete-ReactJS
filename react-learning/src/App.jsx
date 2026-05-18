@@ -5,8 +5,8 @@ export const App = () => {
       <div>
         <img src="images.png" alt="Vinc" />
       </div>
-      <h4>Name: Vincenzo</h4>
-      <p>rating: 4.5/5</p>
+      <h2>Name: Vincenzo</h2>
+      <h3>rating: 4.5/5</h3>
       <p>summary: Vincenzo is a talented developer with a passion for creating innovative solutions.</p>
     </div>
   );
