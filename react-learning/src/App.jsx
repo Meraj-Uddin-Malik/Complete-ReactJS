@@ -2,7 +2,9 @@ export const App = () => {
 
   return (
     <div>
-      <h1>React Learning</h1>
+      <div>
+        <img src="images.png" alt="Vinc" />
+        </div>
     </div>
   );
 }
